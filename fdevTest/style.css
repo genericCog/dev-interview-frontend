@@ -1,0 +1,71 @@
+/*#region genericStyle*/
+div.genericStyle {
+    /*border-style: solid;
+    border-width: 1px;*/
+        margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 20px;
+        padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+/*#endregion genericStyle*/
+
+/*#region Table*/
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+/*endregion Table*/
+
+/*#region LineChart*/
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+/*endregion LineChart*/
+
+/*#region BarChart*/
+  .chart {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+  }
+
+  .axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .bar {
+    fill: steelblue;
+  }
+/*endregion BarChart*/

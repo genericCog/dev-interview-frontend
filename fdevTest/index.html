@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="underscore.js@*" data-semver="1.8.3" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://getbootstrap.com/examples/justified-nav/justified-nav.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div ng-app="myApp" class="genericStyle">
+      
+      <!-- region theCountRegion -->
+      <div id="theCountRegion">
+        <h1>The Count</h1>
+        <p>
+          <span>OBJECTIVE</span><br/>
+        Create a simple numerical display that shows the total number of respondents... yeah this one is just a simple number, nothing fancy--unless you want to do some kind of neat ticker that counts up to the number of respondents when the page loads ;) See
+        the data/count.json file for the data.
+      </p>
+      <p>
+        <span>SOLUTION</span><br/>
+        AngualarJS binding to display the contents of a JSON file.
+      </p>
+      <br/>
+        <div ng-controller="TheCountCtrl">
+          <table>
+            <tbody>
+              <tr ng-repeat="x in theCount">
+                <td>The Count: </td>
+                <td>{{ x.count }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- END theCountRegion -->
+      
+      <br/><br/>
+      <!--region theTop5Region -->
+      <div id="theTop5Region">
+        <div ng-controller="customersCtrl">
+          <h1>The Top 5</h1>
+          <p>
+          <span>OBJECTIVE</span><br/>
+          Create a table of the top 5 countries based on the number of respondents from each country. Each row in the table should show the country as well as the number of respondents from that country. See the data/top5.json file for the data.
+        </p>
+        <span>SOLUTION</span><br/>
+       <p>AngualarJS binding to display the contents of a JSON file.
+      </p>
+      <br/>
+          <table>
+            <tbody>
+              <tr>
+                <th>
+                  <a href="" ng-click="reverse=false;order('responses', false)">Responses</a>
+ (
+                                <a href="" ng-click="order('-responses',false)">^</a>
+)</th>
+                <th>
+                  <a href="" ng-click="reverse=!reverse;order('countries', reverse)">Country</a>
+                </th>
+              </tr>
+              <tr ng-repeat="x in top5 | orderBy : 'responses' : reverse">
+                <td>{{ x.responses }}</td>
+                <td>{{ x.country }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- END theTop5Region -->
+      
+      <br/><br/>
+      
+      <!-- region lineChartRegion -->
+      
+      <div id="lineChartRegion">
+        <h1>Line Chart</h1>
+        <p>
+          <span>OBJECTIVE</span><br/>
+        Create a chart visualization showing the number of responses for each day during the month of November 2013. The type of chart is up to you, but we recommend a line or area chart. See the data/firstmonth.json file for the data.
+      </p>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <div id="lineChart"></div>
+      </div>
+      
+      <!-- END lineChartRegion -->
+      <br/><br/>
+      
+      <!-- region vertBarRegion -->
+      <div id="vertBarRegion">
+        <h1>Vertical Bar Chart</h1>
+        <p>
+          <span>OBJECTIVE</span><br/>
+        Create a vertical bar (column) chart showing the number of responses grouped by the respondent's occupation. See the data/occupations.json file for the data.
+      </p>
+        <div id="myVertBarChart"></div>
+      </div>
+      <!-- END vertBarRegion -->
+      
+    </div>
+    <!-- END myApp -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+    <script src="_js_myApp.js"></script>
+    <script src="_js_myCtrl.js"></script>
+    <script src="_js_lineChart.js"></script>
+    <script src="_js_vBarChart.js"></script>
+    <script src="_js_hBarChart.js"></script>
+  </body>
+
+</html>
